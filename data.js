@@ -17,7 +17,7 @@
                 "name": "B"
             },
             {
-                "name": "C"
+                    "name": "C"
             },
             {
                 "name": "D"

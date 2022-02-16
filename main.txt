@@ -129,3 +129,179 @@ $(document).ready(() => {
   });
 });
 
+
+
+
+*************************** ********************************
+const tree = document.getElementById("tree");
+const app = document.getElementById("append");
+let node;
+let nodeElement;
+
+function iterobj(obj) {
+  for (val in obj) {
+    // console.log("*" + node);
+    // console.log(nodeElement);
+    nodeElement = document.getElementById(node);
+    if (typeof obj[val] == "object") {
+      if (obj[val].hasOwnProperty("name")) {
+        nodeElement.innerHTML += `
+          <li> ${obj[val].name} 
+          <ul id="${obj[val].name.split(/\s+/).join("")}"></ul>
+          </li>
+        `;
+        if(obj[val].hasOwnProperty("children"))
+        node = obj[val].name.split(/\s+/).join("");
+      }
+      iterobj(obj[val]);
+    } else {
+      // CODE PENDING
+    }
+  }
+}
+
+$(document).ready(() => {
+  $.ajax({
+    type: "GET",
+    url: "data.js",
+    success: (res) => {
+      data = JSON.parse(res);
+
+      for (parent of data) {
+        app.innerHTML += `
+          <li> ${parent.name} 
+           <ul id="${parent.name.split(/\s+/).join("")}"></ul>
+          </li>
+        `;
+        node = parent.name.split(/\s+/).join("");
+        iterobj(parent);
+        // console.log("DONE");
+      }
+    },
+  });
+});
+console.clear();
+
+
+
+*********************************************6 **************************************
+const tree = document.getElementById("tree");
+const app = document.getElementById("append");
+let node;
+let nodeElement;
+let temp;
+
+function iterobj(obj) {
+  for (val in obj) {
+    // console.log("*" + node);
+    // console.log(nodeElement);
+    nodeElement = document.getElementById(node);
+    if (typeof obj[val] == "object") {
+      if (obj[val].hasOwnProperty("name")) {
+        nodeElement.innerHTML += `
+          <li> ${obj[val].name} 
+          <ul id="${obj[val].name.split(/\s+/).join("")}"></ul>
+          </li>
+        `;
+        if(obj[val].hasOwnProperty("children")){
+          node = obj[val].name.split(/\s+/).join("");
+          // console.log(obj[val].children);
+          for(x of obj[val].children){
+              console.log(x);
+          }
+          
+        }
+      }
+      iterobj(obj[val]);
+    } else {
+      // CODE PENDING
+    }
+  }
+}
+
+$(document).ready(() => {
+  $.ajax({
+    type: "GET",
+    url: "data.js",
+    success: (res) => {
+      data = JSON.parse(res);
+
+      for (parent of data) {
+        app.innerHTML += `
+          <li> ${parent.name} 
+           <ul id="${parent.name.split(/\s+/).join("")}"></ul>
+          </li>
+        `;
+        node = parent.name.split(/\s+/).join("");
+        temp = node;
+        iterobj(parent);
+        // console.log("DONE");
+      }
+    },
+  });
+});
+console.clear();
+
+
+
+************************************************ almost *******************************************
+const tree = document.getElementById("tree");
+const app = document.getElementById("append");
+let node;
+let nodeElement;
+let temp;
+
+function iterobj(obj) {
+  for (val in obj) {
+    if (typeof obj[val] == "object") {
+      if (obj[val].hasOwnProperty("name")) {
+        nodeElement = document.getElementById(node);
+        nodeElement.innerHTML += `
+          <li> ${obj[val].name}
+          <ul id="${obj[val].name.split(/\s+/).join("")}"></ul>
+          </li>
+        `;
+        if (obj[val].hasOwnProperty("children")) {
+          // node = obj[val].name.split(/\s+/).join("");
+          for (x of obj[val].children) {
+            // console.log(x.name);
+            document.getElementById(obj[val].name).innerHTML += `
+              <li> ${x.name}
+              <ul id="${x.name.split(/\s+/).join("")}"></ul>
+              </li>
+            `;
+          }
+        }
+        //   // console.log(obj[val].children);
+      }
+      iterobj(obj[val]);
+    } else {
+      // CODE PENDING
+    }
+  }
+}
+
+$(document).ready(() => {
+  $.ajax({
+    type: "GET",
+    url: "data.js",
+    success: (res) => {
+      data = JSON.parse(res);
+
+      for (parent of data) {
+        app.innerHTML += `
+          <li> ${parent.name} 
+           <ul id="${parent.name.split(/\s+/).join("")}"></ul>
+          </li>
+        `;
+        node = parent.name.split(/\s+/).join("");
+        temp = node;
+        // console.log(temp);
+        iterobj(parent);
+        // console.log("DONE");
+      }
+    },
+  });
+});
+console.clear();
+
