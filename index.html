@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic list</title>
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="tree" id="tree">
+        <ul>
+          <li>
+            <span>Parent</span>
+            <ul>
+              <li>
+                child 1
+                <ul>
+                  <li>Grand child 1</li>
+                  <li>Grand child 2</li>
+                  <li>
+                    Grand child 3
+                    <ul>
+                      <li>Great grand child 1</li>
+                      <li>Great grand child 2</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>child 2</li>
+              <li>
+                child 3
+                <ul>
+                  <li>Grand child 4</li>
+                  <li>Grand child 5</li>
+                  <li>Grand child 6</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="main.js"></script>
+  </body>
+</html>
