@@ -20,7 +20,15 @@
                 "name": "C",
                 "children": [
                     {
-                        "name": "s"
+                        "name": "s",
+                        "children": [
+                            {
+                                "name": "al"
+                            },
+                            {
+                                "name": "bl"
+                            }
+                        ]
                     },
                     {
                         "name": "d"

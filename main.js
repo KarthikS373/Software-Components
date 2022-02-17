@@ -23,7 +23,7 @@ function iterobj(obj) {
             // console.log(x.name);
             document.getElementById(obj[val].name).innerHTML += `
             <li> ${x.name}
-            <ul id="${x.name.split(/\s+/).join("")}+"></ul>
+            <ul id="${x.name.split(/\s+/).join("")}"></ul>
             </li>
             `;
             arr.push(x.name);
@@ -36,8 +36,6 @@ function iterobj(obj) {
       }
       iterobj(obj[val]);
     } else {
-      // CODE PENDING
-
       for (let x of arr) {
         list = document.getElementsByClassName(x);
         // console.log(list[0])
