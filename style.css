@@ -2,9 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    object-fit: contain;
 }
 
-#carousel{
-    height: 25em;
+body{
+    background-color: #eee;
+    display: block;
 }
 
+.d-block{
+    min-height: 33em;
+    max-height: 35em;
+    box-sizing: 1px 1px 10px 0.2px gray;
+    margin-top: 2em;
+}
+
+  
+.myCont{
+    background-image: linear-gradient(to right,#84fab0, #8fd3f4);
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    background-color: lightblue;
+}
