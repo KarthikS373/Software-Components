@@ -15,17 +15,17 @@ function iterobj(obj) {
           </li>
         `;
         if (obj[val].hasOwnProperty("children")) {
-          // node = obj[val].name.split(/\s+/).join("");
           for (x of obj[val].children) {
             // console.log(x.name);
             document.getElementById(obj[val].name).innerHTML += `
-              <li> ${x.name}
-              <ul id="${x.name.split(/\s+/).join("")}"></ul>
-              </li>
+            <li> ${x.name}
+            <ul id="${x.name.split(/\s+/).join("")}+"></ul>
+            </li>
             `;
+            console.log(document.getElementById(x.name.split(/\s+/).join("")));
+            // document.getElementById(x.name).remove();
           }
         }
-        //   // console.log(obj[val].children);
       }
       iterobj(obj[val]);
     } else {
@@ -49,9 +49,7 @@ $(document).ready(() => {
         `;
         node = parent.name.split(/\s+/).join("");
         temp = node;
-        // console.log(temp);
         iterobj(parent);
-        // console.log("DONE");
       }
     },
   });

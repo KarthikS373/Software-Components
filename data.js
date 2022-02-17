@@ -17,7 +17,15 @@
                 "name": "B"
             },
             {
-                    "name": "C"
+                "name": "C",
+                "children": [
+                    {
+                        "name": "s"
+                    },
+                    {
+                        "name": "d"
+                    }
+                ]
             },
             {
                 "name": "D"
